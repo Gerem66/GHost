@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Ghost</title>
+        <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Gérémy LECAPLAIN" />
+        <meta name="copyright" content="Gérémy LECAPLAIN" />
+        <meta name="description" content="Service hébergement simple et gratuit">
+        <meta name="keywords" content="hébergement, gratuit, simple, free, host, file, files" />
+        
+		<!-- Icons       --><link rel="icon" href="images/logo/sad-ghost.png">
+        <!-- Style       --><link rel="stylesheet" href="css/style.css">
+        <!-- FontAwesome --><link rel="stylesheet" href="https://geremy.eu/plugins/fontawesome-free-5.13.0-web/css/fontawesome.css">
+        <!-- FA-Solid    --><link rel="stylesheet" href="https://geremy.eu/plugins/fontawesome-free-5.13.0-web/css/solid.css">
+        <!-- Iframe mode --><script type="text/javascript" src="js/iframe.js"></script>
+    </head>
+    <body>
+        <div id="upload" class="upload">
+            <div class="upload-files">
+                <header class="cursor">
+                    <p>
+                        <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                        <span class="up">G</span>
+                        <span class="load">Host</span>
+                    </p>
+                </header>
+                <div class="body" id="drop">
+                    <!--i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i-->
+                    <img class="bg-ghost" src="images/sad-ghost.png" aria-hidden="true">
+                    <p class="pointer-none"><b>Drag and drop</b> files here <br /> or <a href="" id="triggerFile">browse</a> to begin the upload</p>
+                    <p class="pointer-none">Click <a href="about">here</a> for more informations<br />or to make a <b>donation</b></p>
+                    <input id="files" name="files" type="file" multiple="multiple" />
+                </div>
+                <div id="content-upload">
+                    <div class="divider">
+                        <span><AR>FILES</AR></span>
+                    </div>
+                    <div id="list-files">
+                        <!--   template   -->
+                    </div>
+
+                    <div class="parent-zip">
+                        <div id="file--zip" class="file">
+                            <div class="name" title="All files ZIP"><span>ZIP</span></div>
+                            <div id="download-zip" class="progress"></div>
+                            <div class="done">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000">
+                                    <g><path id="path" d="M500,10C229.4,10,10,229.4,10,500c0,270.6,219.4,490,490,490c270.6,0,490-219.4,490-490C990,229.4,770.6,10,500,10z M500,967.7C241.7,967.7,32.3,758.3,32.3,500C32.3,241.7,241.7,32.3,500,32.3c258.3,0,467.7,209.4,467.7,467.7C967.7,758.3,758.3,967.7,500,967.7z M748.4,325L448,623.1L301.6,477.9c-4.4-4.3-11.4-4.3-15.8,0c-4.4,4.3-4.4,11.3,0,15.6l151.2,150c0.5,1.3,1.4,2.6,2.5,3.7c4.4,4.3,11.4,4.3,15.8,0l308.9-306.5c4.4-4.3,4.4-11.3,0-15.6C759.8,320.7,752.7,320.7,748.4,325z"</g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <input id="password" class="password importar" type="password" placeholder="Password (Optional)"></input>
+                    <button id="bt-get-link" class="importar">Get link</button>
+                    <button id="bt-back" class="importar">Back</button>
+
+                </div>
+                <div class="body hidden" id="link">
+                    <!--i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i-->
+                    <img class="bg-ghost" src="images/sad-ghost.png" aria-hidden="true">
+                    <p class="pointer-none">Link : <a href="#" id="link-text"></a></p>
+                    <b id="clipboard-text" class="clipboard-text">Copied to clipoard ! Click again to open link</b>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/requests.js"></script>
+        <script type="text/javascript" src="js/upload.js"></script>
+           
+    </body>
+</html>

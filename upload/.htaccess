@@ -1,0 +1,30 @@
+<LIMIT GET POST>
+Options -Indexes
+order deny,allow
+deny from all
+</LIMIT>
+
+<FilesMatch "\.png$">
+allow from all
+satisfy all
+</FilesMatch>
+
+<FilesMatch "\.jpg$">
+allow from all
+satisfy all
+</FilesMatch>
+
+<FilesMatch "\.jpeg$">
+allow from all
+satisfy all
+</FilesMatch>
+
+<FilesMatch "\.mp3$">
+allow from all
+satisfy all
+</FilesMatch>
+
+<FilesMatch "\.mp4$">
+allow from all
+satisfy all
+</FilesMatch>
