@@ -44,9 +44,8 @@
 		<!-- Icons       --><link rel="icon" href="images/logo/sad-ghost.png">
         <!-- Style       --><link rel="stylesheet" href="css/style-download.css">
         <!-- Style anim  --><link rel="stylesheet" href="css/style-anim.css">
-        <!-- FontAwesome --><link rel="stylesheet" href="https://geremy.eu/plugins/fontawesome-free-5.13.0-web/css/fontawesome.css">
-        <!-- FA-Solid    --><link rel="stylesheet" href="https://geremy.eu/plugins/fontawesome-free-5.13.0-web/css/solid.css">
         <!-- Iframe mode --><script type="text/javascript" src="js/iframe.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <form class="card" action="" method="POST">
