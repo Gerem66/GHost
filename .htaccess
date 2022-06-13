@@ -4,3 +4,6 @@ RewriteRule ^about$ about.html
 RewriteRule ^thanks$ donation.html
 RewriteRule ^error$ error.html
 RewriteRule ^([a-zA-Z0-9]+)$ download.php?id=$1
+
+# GHost Maintenance
+#RewriteRule ^(.*)$ maintenance.html
