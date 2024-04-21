@@ -1,23 +1,27 @@
-html, body {
+html {
     height: 100vh;
     margin: 0;
     padding: 0;
 
-    -moz-user-select: none; /* Firefox */
     -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
-    -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
-    user-select: none; /* Propriété standard */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+            user-select: none; /* Propriété standard */
+
+    background: -webkit-linear-gradient(to top, #46525f, #8699aa);
+    background: linear-gradient(to top, #46525f, #8699aa);
+    background-attachment: fixed;
 }
 
 body {
+    height: 100%;
+    margin: 0;
     font-family: "Roboto", sans-serif;
-    background: -webkit-linear-gradient(to top, #46525f, #8699aa);
-    background: linear-gradient(to top, #46525f, #8699aa);
-    display: -webkit-box;
+
     display: flex;
     -webkit-box-pack: center;
-    justify-content: center;
     -webkit-box-align: center;
+    justify-content: center;
     align-items: center;
 }
 

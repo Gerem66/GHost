@@ -7,13 +7,16 @@ html {
        -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
             user-select: none; /* Propriété standard */
-}
 
-body {
-    font-family: "Roboto", sans-serif;
     background: -webkit-linear-gradient(to top, #46525f, #8699aa);
     background: linear-gradient(to top, #46525f, #8699aa);
     background-attachment: fixed;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
 
     display: flex;
     -webkit-box-pack: center;
@@ -43,6 +46,16 @@ body:not(.active) {
     opacity: 0;
 }
 
+.about .back {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+
+    opacity: 0;
+    -webkit-animation: fadeup 0.5s 2s ease both;
+            animation: fadeup 0.5s 2s ease both;
+}
 .about .card {
     margin-left: 24px;
     margin-right: 24px;
@@ -73,7 +86,7 @@ body:not(.active) {
 .about .card li {
     text-align: left;
     height: 12px;
-    margin-left: 24px;
+    margin-left: 12px;
 }
 .about p.credit {
     margin-bottom: 34px;

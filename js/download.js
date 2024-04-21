@@ -34,13 +34,13 @@ function ShowFiles(data) {
             el_popup.onmousemove = (ev) => {
                 // Move image
                 if (scale > 1) {
-                    x = (ev.clientX - screen.width/2) / 2;
-                    y = (ev.clientY - screen.height/2) / 2;
+                    x = -(ev.clientX - screen.width/2) / 2;
+                    y = -(ev.clientY - screen.height/2) / 2;
                     ApplyTransform();
                 }
             }
             el_popup.onwheel = (ev) => {
-                let scroll = ev.deltaY > 0 ? 1 : -1;
+                let scroll = ev.deltaY > 0 ? -1 : 1;
                 let newSize = scale + scroll / 10;
                 newSize = Math.min(3, newSize);
                 newSize = Math.max(0, newSize);

@@ -5,7 +5,7 @@
 * [x] Fix Progressbar
 * [x] Increase security
 * [~] Responsive (front)
-* [ ] Auto-delete
+* [ ] Auto-delete (after 1 month of inactivity)
 
 * [x] Viewer d'images
 * [ ] Viewer vidéo
@@ -14,10 +14,7 @@
 * [x] Show %
 * [x] Bug lors d'importation de fichiers de type inconnu
 * [x] Limiter nombre de fichiers
-
-* [ ] Upload dossiers
-* [ ] Upload gros fichiers
-* [ ] Upload errors manager
+* [ ] Managing upload errors
 
 * [ ] Anti-DDOS
 * [ ] Anti-Sniffer

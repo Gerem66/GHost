@@ -162,11 +162,11 @@ bt_getLink.addEventListener('click', () => {
 	bt_back.classList.remove('active');
 	in_password.classList.remove('active');
 	el_link.classList.remove('hidden');
-	txt_link.innerHTML = 'https://geremy.eu/GHost/' + dirName;
+	txt_link.innerHTML = 'https://geremy.dev/GHost/' + dirName;
 	txt_link.addEventListener('click', () => {
-		navigator.clipboard.writeText('https://geremy.eu/GHost/' + dirName);
+		navigator.clipboard.writeText('https://geremy.dev/GHost/' + dirName);
 		txt_clipboard.style.display = 'block';
-		setTimeout(() => txt_link.href = 'https://geremy.eu/GHost/' + dirName, 500);
+		setTimeout(() => txt_link.href = 'https://geremy.dev/GHost/' + dirName, 500);
 	});
 
 	let form_data = new FormData();

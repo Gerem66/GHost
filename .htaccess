@@ -6,4 +6,4 @@ RewriteRule ^error$ error.html
 RewriteRule ^([a-zA-Z0-9]+)$ download.php?id=$1
 
 # GHost Maintenance
-#RewriteRule ^(.*)$ maintenance.html
+#RewriteRule ^|about|error|thanks$ maintenance.html [L]
