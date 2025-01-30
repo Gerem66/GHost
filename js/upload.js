@@ -1,3 +1,5 @@
+const url = 'https://geremy.dev/GHost';
+
 let dirName;
 
 let el_contentMain = document.getElementById('drop');
@@ -162,11 +164,11 @@ bt_getLink.addEventListener('click', () => {
 	bt_back.classList.remove('active');
 	in_password.classList.remove('active');
 	el_link.classList.remove('hidden');
-	txt_link.innerHTML = 'https://geremy.dev/GHost/' + dirName;
+	txt_link.innerHTML = url + '/' + dirName;
 	txt_link.addEventListener('click', () => {
-		navigator.clipboard.writeText('https://geremy.dev/GHost/' + dirName);
+		navigator.clipboard.writeText(url + '/' + dirName);
 		txt_clipboard.style.display = 'block';
-		setTimeout(() => txt_link.href = 'https://geremy.dev/GHost/' + dirName, 500);
+		setTimeout(() => txt_link.href = url + '/' + dirName, 500);
 	});
 
 	let form_data = new FormData();
