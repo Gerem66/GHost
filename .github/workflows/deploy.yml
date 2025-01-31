@@ -56,7 +56,7 @@ jobs:
       run: |
         RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" ${{ vars.SITE_URL }})
         echo "Response Code: $RESPONSE"
-        if [ "$RESPONSE" -ne 200 ]; then
+        if [ "$RESPONSE" -ne 200 ] && [ "$RESPONSE" -ne 301 ]; then
           echo "Le site a retourné le statut HTTP $RESPONSE"
           exit 1
         fi

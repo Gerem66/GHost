@@ -1,33 +1,73 @@
 <?php
+    // Start output buffering to prevent early output
+    ob_start();
 
-    // Error
-    if (!isset($_GET['id']) || strlen($_GET['id']) != 8 || !is_dir('upload/'.$_GET['id'].'/')) {
-        header('Location: ./error');
+    // Error handling function
+    function handleDownloadError($message) {
+        error_log($message);
+        header('HTTP/1.1 404 Not Found');
+        header('Location: ./error.html');
         exit();
+    }
+
+    // Validate input
+    if (!isset($_GET['id']) || strlen($_GET['id']) != 8) {
+        handleDownloadError("Invalid download ID");
+    }
+
+    $dir = $_GET['id'];
+    $uploadDir = "upload/$dir/";
+
+    // Check if upload directory exists
+    if (!is_dir($uploadDir)) {
+        handleDownloadError("Upload directory does not exist: $uploadDir");
     }
 
     // Download
-    if (isset($_GET['id']) && strlen($_GET['id']) == 8 && isset($_REQUEST['password'])) {
-        $dir = $_GET['id'];
-        $pwd = $_REQUEST['password'];
-        $hash = file_get_contents("upload/$dir/GHost_$dir.link");
-        if ($hash != '' && !password_verify($pwd, $hash)) {
-            header("Location: ./$dir");
-        }
+    if (isset($_REQUEST['password'])) {
         $f = "GHost_$dir.zip";
-        $file = "upload/$dir/$f";
-        $filetype = filetype($file);
+        $file = $uploadDir . $f;
+        $linkFile = $uploadDir . "GHost_$dir.link";
+
+        // Verify password if link file exists
+        if (file_exists($linkFile)) {
+            $hash = file_get_contents($linkFile);
+            $pwd = $_REQUEST['password'];
+            
+            if ($hash != '' && !password_verify($pwd, $hash)) {
+                header("Location: ./$dir");
+                exit();
+            }
+        }
+
+        // Check file existence and readability
+        if (!file_exists($file)) {
+            handleDownloadError("File not found: $file");
+        }
+
+        if (!is_readable($file)) {
+            handleDownloadError("File not readable: $file");
+        }
+
+        // Get file details
+        $filetype = mime_content_type($file);
         $filename = basename($file);
+        $filesize = filesize($file);
+
+        // Clear any previous output
+        ob_clean();
+
+        // Send download headers
         header("Cache-Control: no-cache, must-revalidate");
-        header("Content-Type: ".$filetype);
-        header("Content-Length: ".filesize($file));
+        header("Content-Type: " . $filetype);
+        header("Content-Length: " . $filesize);
         header("Content-Disposition: attachment; filename=\"$filename\"");
+        
+        // Output file
         readfile($file);
         exit();
     }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
