@@ -83,7 +83,8 @@
     foreach ($files as $file) {
         if ($file != '.' && $file != '..' && $file != "GHost_$dir.zip" && $file != "GHost_$dir.link") {
             // Set icon
-            $ext = end(explode('.', $file));
+            $exploded = explode('.', $file);
+            $ext = end($exploded);
             $icon = $icons['default'];
             if ($icons[$ext] != '')
                 $icon = $icons[$ext];
